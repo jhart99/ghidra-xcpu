@@ -1,0 +1,52 @@
+# 0000 00ss ssst tttt 000a a000 0001 1100
+:madd RS32src, RT32src              is $(AMODE) & REL6=0 & prime=0 & fct=0x1c & RS32src & RT32src & zero5=0 & zero1315=0 & aclo & achi {
+    tmp1:8 = sext( RS32src );
+    tmp2:8 = sext( RT32src );
+    prod:8 = tmp1 * tmp2;
+    achilo:8 = sext(achi) << 32 + sext(aclo);
+    prod = prod + achilo;
+    aclo = sext(prod:4);
+    prod = prod >> 32;
+    achi = sext(prod:4);
+}
+
+
+# 0000 00ss ssst tttt 000a a000 0001 1101
+:maddu RS32src, RT32src              is $(AMODE) & REL6=0 & prime=0 & fct=0x1d & RS32src & RT32src & zero5=0 & zero1315=0 & aclo & achi {
+    tmp1:8 = zext( RS32src );
+    tmp2:8 = zext( RT32src );
+    prod:8 = tmp1 * tmp2;
+    achilo:8 = zext(achi) << 32 + zext(aclo);
+    prod = prod + achilo;
+    aclo = sext(prod:4);
+    prod = prod >> 32;
+    achi = sext(prod:4);
+}
+
+
+# 0000 00ss ssst tttt 000a a000 0001 1110
+:msub RS32src, RT32src              is $(AMODE) & REL6=0 & prime=0 & fct=0x1e & RS32src & RT32src & zero5=0 & zero1315=0 & aclo & achi {
+    tmp1:8 = sext( RS32src );
+    tmp2:8 = sext( RT32src );
+    prod:8 = tmp1 * tmp2;
+    achilo:8 = sext(achi) << 32 + sext(aclo);
+    prod = achilo - prod;
+    aclo = sext(prod:4);
+    prod = prod >> 32;
+    achi = sext(prod:4);
+}
+
+
+# 0000 00ss ssst tttt 000a a000 0001 1111
+:mult RS32src, RT32src              is $(AMODE) & REL6=0 & prime=0 & fct=0x1f & RS32src & RT32src & zero5=0 & zero1315=0 & aclo & achi {
+    tmp1:8 = zext( RS32src );
+    tmp2:8 = zext( RT32src );
+    prod:8 = tmp1 * tmp2;
+    achilo:8 = zext(achi) << 32 + zext(aclo);
+    prod = achilo - prod;
+    aclo = sext(prod:4);
+    prod = prod >> 32;
+    achi = sext(prod:4);
+}
+
+

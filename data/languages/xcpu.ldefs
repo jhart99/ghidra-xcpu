@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language_definitions>
+  <language processor="MIPS"
+            endian="little"
+            size="32"
+            variant="xcpu"
+            version="1.0"
+            slafile="xcpu.sla"
+            processorspec="xcpu.pspec"
+            id="MIPS:LE:32:xcpu">
+    <description>RDA XCPU 32-bit addresses, little endian, with mips16e</description>
+    <compiler name="default" spec="xcpu.cspec" id="default"/>
+    <external_name tool="gnu" name="mips:4000"/>
+    <external_name tool="IDA-PRO" name="mipsl"/>
+    <external_name tool="DWARF.register.mapping.file" name="mips.dwarf"/>
+  </language>
+</language_definitions>
