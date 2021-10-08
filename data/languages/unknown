@@ -1,30 +1,5 @@
-MIPS16 instructions which are unknown
-3C 04  or FO 4C 3C 04
-FF FC
-FF FF
-F1 F0
-3c 01
-18 10
-f0 00
-66 74
-46 34
-FF FE
-FF FF
-E1 00
-18 10
-F0 80
-F6 60
-34 50
-F0 40
-F0 20
-FC 50
+MIPS32 instructions which are unknown
+BC 00 00 00= 10111100 00000000
+BC 00 00 02= 10111100 00000010
 
-MIPS32
-00 A5 00 01 #
-00 A5 00 00 # sll
-0A A0 6C 92 # j
-B2 2B 98 20 # sdl from MIPS64?
-FE 7D FF 99 # sd from MIPS64?
-E4 F7 D5 04 # swcl from mipsfloat?
-04 1E FA 37
-F8 49 FC 50
+These cause ICache and DCache flush, but according to spec should result in reserved instruction exception.
